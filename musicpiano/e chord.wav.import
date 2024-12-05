@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cly3p7d7f53e5"
+path="res://.godot/imported/e chord.wav-699ebfc7e042e2004396749b0dcfbe1a.sample"
+
+[deps]
+
+source_file="res://e chord.wav"
+dest_files=["res://.godot/imported/e chord.wav-699ebfc7e042e2004396749b0dcfbe1a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

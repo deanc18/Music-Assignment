@@ -1,0 +1,188 @@
+[gd_scene load_steps=22 format=3 uid="uid://dgd652e31trar"]
+
+[ext_resource type="Texture2D" uid="uid://ci6kbueyqdvsx" path="res://PianoKeys.png" id="1_hfgju"]
+[ext_resource type="Texture2D" uid="uid://bjv8y7ce1ig30" path="res://C key.png" id="2_dw4rv"]
+[ext_resource type="Script" path="res://SOUND.gd" id="2_ect0s"]
+[ext_resource type="Texture2D" uid="uid://dbufjyr3d43rk" path="res://D key.png" id="3_cvtem"]
+[ext_resource type="Texture2D" uid="uid://jlj7ydyi2ya0" path="res://E Key.png" id="4_rv1ps"]
+[ext_resource type="Texture2D" uid="uid://pclmy0fc4f2a" path="res://F Key.png" id="5_53nt3"]
+[ext_resource type="Texture2D" uid="uid://b6fe0a1cyhy2w" path="res://G key.png" id="6_ithva"]
+[ext_resource type="Texture2D" uid="uid://cd2fkpom28sd2" path="res://A Key.png" id="7_un4pd"]
+[ext_resource type="Texture2D" uid="uid://dc01ptm3i371m" path="res://B Key.png" id="8_k48tb"]
+[ext_resource type="AudioStream" uid="uid://bj4x3lcg8glrn" path="res://B chord.wav" id="9_eg1ov"]
+[ext_resource type="AudioStream" uid="uid://cdyodr32e8ha" path="res://A chord.wav" id="10_lmqmm"]
+[ext_resource type="AudioStream" uid="uid://c8aepsnq61gwq" path="res://G chord.wav" id="11_i1xrc"]
+[ext_resource type="AudioStream" uid="uid://chxysutjngk8m" path="res://F chord.wav" id="12_t6sxo"]
+[ext_resource type="AudioStream" uid="uid://cly3p7d7f53e5" path="res://e chord.wav" id="13_y8ra7"]
+[ext_resource type="AudioStream" uid="uid://bnff7m67k2wbs" path="res://D chord.wav" id="14_udfyr"]
+[ext_resource type="AudioStream" uid="uid://upp5np5hgjoe" path="res://c chord.mp3" id="15_m8gwp"]
+[ext_resource type="Texture2D" uid="uid://cktdq4sgbnisf" path="res://1 key.png" id="17_pmiuo"]
+[ext_resource type="AudioStream" uid="uid://bu3h6013mnx7d" path="res://piano-c.wav" id="17_uchnj"]
+[ext_resource type="AudioStream" uid="uid://dk7l3fu6y8fax" path="res://dm-piano-chord.wav" id="18_13261"]
+[ext_resource type="AudioStream" uid="uid://bqmdl0biqv88j" path="res://g-piano-chord.wav" id="19_jrcgt"]
+
+[sub_resource type="Theme" id="Theme_7j8fc"]
+
+[node name="PianoKeys" type="Sprite2D"]
+position = Vector2(1044, 459)
+scale = Vector2(1.08657, 1)
+texture = ExtResource("1_hfgju")
+
+[node name="Piano" type="Node2D" parent="."]
+position = Vector2(-111.263, -399)
+script = ExtResource("2_ect0s")
+
+[node name="C Key" type="Button" parent="Piano"]
+offset_left = -778.693
+offset_top = 763.0
+offset_right = 1329.31
+offset_bottom = 3741.0
+scale = Vector2(0.0520195, 0.0492424)
+icon = ExtResource("2_dw4rv")
+flat = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Piano/C Key"]
+stream = ExtResource("15_m8gwp")
+volume_db = 0.6
+
+[node name="D Key" type="Button" parent="Piano"]
+offset_left = -636.963
+offset_top = 704.0
+offset_right = 571.037
+offset_bottom = 1912.0
+scale = Vector2(0.145231, 0.165161)
+icon = ExtResource("3_cvtem")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/D Key"]
+stream = ExtResource("14_udfyr")
+
+[node name="E Key" type="Button" parent="Piano"]
+offset_left = -459.34
+offset_top = 651.0
+offset_right = -331.34
+offset_bottom = 779.0
+scale = Vector2(1.21356, 2.02046)
+icon = ExtResource("4_rv1ps")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/E Key"]
+stream = ExtResource("13_y8ra7")
+
+[node name="F Key" type="Button" parent="Piano"]
+offset_left = -232.019
+offset_top = 692.0
+offset_right = -104.019
+offset_bottom = 820.0
+scale = Vector2(1.21356, 2.02046)
+icon = ExtResource("5_53nt3")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/F Key"]
+stream = ExtResource("12_t6sxo")
+
+[node name="G Key" type="Button" parent="Piano"]
+offset_left = -70.9618
+offset_top = 644.0
+offset_right = 57.0382
+offset_bottom = 772.0
+scale = Vector2(1.21356, 2.02046)
+icon = ExtResource("6_ithva")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/G Key"]
+stream = ExtResource("11_i1xrc")
+
+[node name="A key" type="Button" parent="Piano"]
+offset_left = 150.837
+offset_top = 691.0
+offset_right = 278.837
+offset_bottom = 819.0
+scale = Vector2(1.21356, 2.02046)
+icon = ExtResource("7_un4pd")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/A key"]
+stream = ExtResource("10_lmqmm")
+
+[node name="B Key" type="Button" parent="Piano"]
+offset_left = 381.839
+offset_top = 731.0
+offset_right = 3282.84
+offset_bottom = 5003.0
+scale = Vector2(0.0321397, 0.043777)
+theme = SubResource("Theme_7j8fc")
+theme_type_variation = &"FlatButton"
+icon = ExtResource("8_k48tb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/B Key"]
+stream = ExtResource("9_eg1ov")
+
+[node name="C minor key" type="Button" parent="Piano"]
+offset_left = 598.116
+offset_top = 736.0
+offset_right = 2706.12
+offset_bottom = 4689.0
+scale = Vector2(0.046432, 0.0447812)
+icon = ExtResource("2_dw4rv")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C minor key"]
+position = Vector2(15.5489, 19)
+stream = ExtResource("15_m8gwp")
+
+[node name="C2 key" type="Button" parent="Piano"]
+offset_left = -813.666
+offset_top = 65.0
+offset_right = -151.666
+offset_bottom = 662.0
+scale = Vector2(0.318306, 0.408203)
+icon = ExtResource("17_pmiuo")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C2 key"]
+position = Vector2(-12.8938, 18.3731)
+stream = ExtResource("17_uchnj")
+
+[node name="Dm Key" type="Button" parent="Piano"]
+light_mask = 927
+visibility_layer = 5
+offset_left = -554.134
+offset_top = 54.0
+offset_right = -395.134
+offset_bottom = 277.0
+scale = Vector2(1.09011, 1.01313)
+text = "2"
+flat = true
+text_overrun_behavior = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/Dm Key"]
+stream = ExtResource("18_13261")
+
+[node name="G#" type="Button" parent="Piano"]
+offset_left = -300.123
+offset_top = 76.0
+offset_right = -178.123
+offset_bottom = 249.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/G#"]
+stream = ExtResource("19_jrcgt")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Piano"]
+process_priority = 1
+position = Vector2(-15.742, 166)
+current = true
+
+[connection signal="pressed" from="Piano/C Key" to="Piano" method="_on_c_key_pressed"]
+[connection signal="pressed" from="Piano/D Key" to="Piano" method="_on_d_key_pressed"]
+[connection signal="pressed" from="Piano/E Key" to="Piano" method="_on_e_key_pressed"]
+[connection signal="pressed" from="Piano/F Key" to="Piano" method="_on_f_key_pressed"]
+[connection signal="pressed" from="Piano/G Key" to="Piano" method="_on_g_key_pressed"]
+[connection signal="pressed" from="Piano/A key" to="Piano" method="_on_a_key_pressed"]
+[connection signal="pressed" from="Piano/B Key" to="Piano" method="_on_b_key_pressed"]
+[connection signal="pressed" from="Piano/C minor key" to="Piano" method="_on_c_minor_key_pressed"]
+[connection signal="pressed" from="Piano/Dm Key" to="Piano" method="_on_dm_key_pressed"]
+[connection signal="pressed" from="Piano/G#" to="Piano" method="_on_g_pressed"]

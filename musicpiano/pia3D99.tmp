@@ -1,0 +1,113 @@
+[gd_scene load_steps=22 format=3 uid="uid://32hasc28xtgo"]
+
+[ext_resource type="Texture2D" uid="uid://ci6kbueyqdvsx" path="res://PianoKeys.png" id="1_hfgju"]
+[ext_resource type="Texture2D" uid="uid://bjv8y7ce1ig30" path="res://C key.png" id="2_dw4rv"]
+[ext_resource type="Script" path="res://KeyPiano.gd" id="2_l0w1w"]
+[ext_resource type="Shader" path="res://piano_keys.gdshader" id="3_5n4fg"]
+[ext_resource type="Texture2D" uid="uid://dbufjyr3d43rk" path="res://D key.png" id="3_cvtem"]
+[ext_resource type="Texture2D" uid="uid://jlj7ydyi2ya0" path="res://E Key.png" id="4_rv1ps"]
+[ext_resource type="Texture2D" uid="uid://pclmy0fc4f2a" path="res://F Key.png" id="5_53nt3"]
+[ext_resource type="Script" path="res://c_keyshader.gd" id="5_57add"]
+[ext_resource type="Texture2D" uid="uid://b6fe0a1cyhy2w" path="res://G key.png" id="6_ithva"]
+[ext_resource type="Texture2D" uid="uid://cd2fkpom28sd2" path="res://A Key.png" id="7_un4pd"]
+[ext_resource type="Texture2D" uid="uid://dc01ptm3i371m" path="res://B Key.png" id="8_k48tb"]
+[ext_resource type="AudioStream" uid="uid://bj4x3lcg8glrn" path="res://B chord.wav" id="9_eg1ov"]
+[ext_resource type="AudioStream" uid="uid://cdyodr32e8ha" path="res://A chord.wav" id="10_lmqmm"]
+[ext_resource type="AudioStream" uid="uid://c8aepsnq61gwq" path="res://G chord.wav" id="11_i1xrc"]
+[ext_resource type="AudioStream" uid="uid://chxysutjngk8m" path="res://F chord.wav" id="12_t6sxo"]
+[ext_resource type="AudioStream" uid="uid://cly3p7d7f53e5" path="res://e chord.wav" id="13_y8ra7"]
+[ext_resource type="AudioStream" uid="uid://bnff7m67k2wbs" path="res://D chord.wav" id="14_udfyr"]
+[ext_resource type="AudioStream" uid="uid://upp5np5hgjoe" path="res://c chord.mp3" id="15_m8gwp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6jya"]
+shader = ExtResource("3_5n4fg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xf1kc"]
+shader = ExtResource("3_5n4fg")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62bd5"]
+
+[node name="PianoKeys" type="Sprite2D"]
+position = Vector2(1151, 523)
+scale = Vector2(1.08657, 1)
+texture = ExtResource("1_hfgju")
+script = ExtResource("2_l0w1w")
+
+[node name="Piano" type="Node2D" parent="."]
+position = Vector2(-111.263, -399)
+script = ExtResource("2_l0w1w")
+
+[node name="C Key" type="Sprite2D" parent="Piano"]
+material = SubResource("ShaderMaterial_a6jya")
+use_parent_material = true
+position = Vector2(-731.758, 840)
+scale = Vector2(0.0520195, 0.0492424)
+texture = ExtResource("2_dw4rv")
+script = ExtResource("5_57add")
+
+[node name="D Key" type="Sprite2D" parent="Piano/C Key"]
+position = Vector2(3715.32, 121.848)
+scale = Vector2(2.79186, 3.35404)
+texture = ExtResource("3_cvtem")
+
+[node name="E Key" type="Sprite2D" parent="Piano/C Key/D Key"]
+position = Vector2(1058.28, -139.258)
+scale = Vector2(8.35607, 12.2333)
+texture = ExtResource("4_rv1ps")
+
+[node name="F Key" type="Sprite2D" parent="Piano/C Key/D Key/E Key"]
+position = Vector2(175.183, 2.47469)
+texture = ExtResource("5_53nt3")
+
+[node name="G Key" type="Sprite2D" parent="Piano/C Key/D Key/E Key/F Key"]
+position = Vector2(138.782, -33.1608)
+texture = ExtResource("6_ithva")
+
+[node name="A key" type="Sprite2D" parent="Piano/C Key/D Key/E Key/F Key/G Key"]
+position = Vector2(185.801, -0.989875)
+texture = ExtResource("7_un4pd")
+
+[node name="B Key" type="Sprite2D" parent="Piano/C Key/D Key/E Key/F Key/G Key/A key"]
+position = Vector2(160.774, 34.1507)
+scale = Vector2(0.0264838, 0.0216668)
+texture = ExtResource("8_k48tb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C Key/D Key/E Key/F Key/G Key/A key/B Key"]
+stream = ExtResource("9_eg1ov")
+script = ExtResource("2_l0w1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C Key/D Key/E Key/F Key/G Key/A key"]
+stream = ExtResource("10_lmqmm")
+script = ExtResource("2_l0w1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C Key/D Key/E Key/F Key/G Key"]
+stream = ExtResource("11_i1xrc")
+script = ExtResource("2_l0w1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C Key/D Key/E Key/F Key"]
+stream = ExtResource("12_t6sxo")
+script = ExtResource("2_l0w1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C Key/D Key/E Key"]
+stream = ExtResource("13_y8ra7")
+script = ExtResource("2_l0w1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C Key/D Key"]
+stream = ExtResource("14_udfyr")
+script = ExtResource("2_l0w1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Piano/C Key"]
+stream = ExtResource("15_m8gwp")
+volume_db = -1.921
+area_mask = 5
+playback_type = 1
+script = ExtResource("2_l0w1w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Piano/C Key"]
+material = SubResource("ShaderMaterial_xf1kc")
+sprite_frames = SubResource("SpriteFrames_62bd5")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(-127.005, -233)
+current = true
+script = ExtResource("2_l0w1w")

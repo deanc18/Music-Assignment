@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://upp5np5hgjoe"
+path="res://.godot/imported/c chord.mp3-07dd42e5662be392f8791ee35d0c47bf.mp3str"
+
+[deps]
+
+source_file="res://c chord.mp3"
+dest_files=["res://.godot/imported/c chord.mp3-07dd42e5662be392f8791ee35d0c47bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
